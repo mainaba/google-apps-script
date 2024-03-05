@@ -1,0 +1,37 @@
+$('#insert').click(function () {
+    $('#output').empty();
+    const value = $('#form').find('input').map((function (_, htmlInputElement) {
+        return htmlInputElement.value;
+    })).toArray();
+    const text = JSON.stringify(value);
+    google.script.run.withFailureHandler(alert).withSuccessHandler(set).insertData(text);
+});
+
+$('#select').click(function () {
+    $('#b').val(String());
+    $('#c').val(String());
+    $('#output').empty();
+    const a = $('#a').val();
+    google.script.run.withFailureHandler(alert).withSuccessHandler(set).selectData(a);
+});
+
+$('#update').click(function () {
+    $('#output').empty();
+    const value = $('#form').find('input').map((function (_, htmlInputElement) {
+        return htmlInputElement.value;
+    })).toArray();
+    const text = JSON.stringify(value);
+    google.script.run.withFailureHandler(alert).withSuccessHandler(set).updateData(text);
+});
+
+$('#delete').click(function () {
+    $('#b').val(String());
+    $('#c').val(String());
+    $('#output').empty();
+    const a = $('#a').val();
+    google.script.run.withFailureHandler(alert).withSuccessHandler(set).deleteData(a);
+});
+
+function set(htmlString) {
+    $('#output').html(htmlString);
+}

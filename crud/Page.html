@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top">
+</head>
+
+<body>
+    <table id="form">
+        <thead>
+            <tr>
+                <th scope="col">A</th>
+                <th scope="col">B</th>
+                <th scope="col">C</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input id="a" type="text" /></td>
+                <td><input id="b" type="text" /></td>
+                <td><input id="c" type="text" /></td>
+            </tr>
+        </tbody>
+    </table>
+    <ul>
+        <li>Fill in A, B and C to insert data into the sheet.</li>
+        <li>Fill in A to select data from the sheet.</li>
+        <li>Fill in A, B and C to update data in the sheet.</li>
+        <li>Fill in A to delete data from the sheet.</li>
+    </ul>
+    <button id="insert">Insert</button>
+    <button id="select">Select</button>
+    <button id="update">Update</button>
+    <button id="delete">Delete</button>
+    <div id="output"></div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+    </script>
+    <script>
+    <?!= include('JavaScript'); ?>
+    </script>
+</body>
+
+</html>
